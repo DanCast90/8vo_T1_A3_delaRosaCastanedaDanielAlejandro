@@ -1,19 +1,12 @@
 import scala.io.StdIn._
 
 object Cinco {
-  var i: Int = 0
-  def numCocientes(n: Int,n2: Int, cont: Int): Int={
-   
-    if(n2!=0){
-		 if(n%n2==0){
-		 
-			numCocientes((n/n2), n2,0)
-		  }  
-		}
-		else{
-			println("no se puede dividir entre 0")
-		}
-		cont
+  def division(num1:Int, num2:Int): Int={
+    if(num2>num1){
+      0
+    }else{
+      1+division(num1-num2, num2)
+    }
   }
   
     def main(args: Array[String]): Unit ={
@@ -22,7 +15,7 @@ object Cinco {
     var n=readInt()
      println("Ingresa numero 2: ")
     var n2=readInt()
-   println( numCocientes(n, n2,0))
+   println( division(n, n2))
     
     }
 }

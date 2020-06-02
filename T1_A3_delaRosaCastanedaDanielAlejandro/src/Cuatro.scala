@@ -2,16 +2,12 @@ import scala.io.StdIn._
 
 object Cuatro {
   
-  def cocientes(n: Int,n2: Int): Unit={
-    if(n%n2==0){
-			if(n2!=1){
-			println(n+"/"+n2+"="+(n/n2));
-			cocientes((n/n2), n2);
-			}
-			else{
-				println("elige otro numero porfavor");
-			}
-		}
+ def cociente(num1:Int, num2:Int): Int ={
+    if(num1>=num2){
+      cociente(num1-num2, num2)
+    }else{
+      num1
+    }
   }
   
   def main(args: Array[String]): Unit ={
@@ -21,6 +17,6 @@ object Cuatro {
     var n=readInt()
      println("Ingresa numero 2: ")
     var n2=readInt()
-    cocientes(n, n2)
+    print(cociente(n, n2))
   }
 }
